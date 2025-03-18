@@ -41,3 +41,29 @@ function atualizarLista() {
         lista.appendChild(itemLista)
     }
 }
+
+function sortearAmigo() {
+    let limite = amigos.length
+
+    // validação: lista vazia
+    if (amigos.length === 0) {
+        alert('Lista vazia! Insira os nomes para sortear.')
+        return
+    }
+
+    // índice aleatório do array
+    let indice = Math.floor(Math.random() * limite)
+
+    // captar o campo em que será exbido o resultado
+    let resultado = document.getElementById('resultado')
+
+    resultado.innerHTML = ""
+
+
+    // exibe o nome sorteado na tela
+    let nomeSorteado = document.createElement('li')
+    nomeSorteado.textContent = amigos[indice]
+    
+    resultado.appendChild(nomeSorteado)
+
+}
